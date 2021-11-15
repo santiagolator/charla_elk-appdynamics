@@ -1,0 +1,101 @@
+{
+   "trigger":{
+      "schedule":{
+         "interval":"1h"
+      }
+   },
+   "input":{
+      "search":{
+         "request":{
+            "search_type":"query_then_fetch",
+            "indices":[
+               "kibana_sample_data_ecommerce*"
+            ],
+            "rest_total_hits_as_int":true,
+            "body":{
+               "size":1,
+               "query":{
+                  "bool":{
+                     "must":[
+                        
+                     ],
+                     "filter":[
+                        {
+                           "range":{
+                              "order_date":{
+                                 "format":"strict_date_optional_time",
+                                 "gte":"now-1h",
+                                 "lte":"now"
+                              }
+                           }
+                        }
+                     ],
+                     "should":[
+                        
+                     ],
+                     "must_not":[
+                        
+                     ]
+                  }
+               },
+               "aggs":{
+                  "0":{
+                     "terms":{
+                        "field":"geoip.city_name",
+                        "order":{
+                           "_count":"desc"
+                        },
+                        "size":10
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "condition":{
+      "compare":{
+         "ctx.payload.hits.total":{
+            "gte":0
+         }
+      }
+   },
+   "actions":{
+      "webhook_total":{
+         "webhook":{
+            "scheme":"http",
+            "host":"168.197.49.81",
+            "port":8293,
+            "method":"post",
+            "path":"/api/v1/metrics",
+            "params":{
+               
+            },
+            "headers":{
+               "Accept":"application/json",
+               "Content-Type":"application/json"
+            },
+            "body":"""[{"metricName":"Custom Metrics|Elasticsearch|eCommerce|TOTAL_RECORDS","aggregatorType":"OBSERVATION","value":{{ctx.payload.hits.total}}}]"""
+         }
+      },
+      "webhook_foreach":{
+         "foreach":"ctx.payload.aggregations.0.buckets",
+         "max_iterations":100,
+         "webhook":{
+            "scheme":"http",
+            "host":"168.197.49.81",
+            "port":8293,
+            "method":"post",
+            "path":"/api/v1/metrics",
+            "params":{
+               
+            },
+            "headers":{
+               "Accept":"application/json",
+               "Content-Type":"application/json"
+            },
+            "body":"""[{{#ctx.payload}}{"metricName":"Custom Metrics|Elasticsearch|eCommerce|City|{{key}}","aggregatorType":"OBSERVATION","value":{{doc_count}}}{{/ctx.payload}}]"""
+         }
+      }
+   }
+}
