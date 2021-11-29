@@ -10,8 +10,13 @@ Este repositorio sirve de apoyo para los asistentes a la charla **[Caso de uso] 
 ---
 ## Materiales
 - [Slides](https://github.com/santiagolator/charla_elk-appdynamics/blob/main/%5BSHARE%5D%20Presentacion%20Elastic%20+%20APPD.pdf)
-- [Watchers](https://github.com/santiagolator/charla_elk-appdynamics/tree/main/Watchers)
-	- *Aclaración: utilizamos un indice que forma parte de los data samples que brinda **Kibana***
+- Watchers
+	- [Transacciones totales](https://github.com/santiagolator/charla_elk-appdynamics/blob/main/Watchers/watcher_elk-appd-TOTAL.json)
+	- [Transacciones totales + ciudad](https://github.com/santiagolator/charla_elk-appdynamics/blob/main/Watchers/watcher_elk-appd-TOTAL+CITY.json)
+	- [Transacciones totales + ciudad + categoria prenda](https://github.com/santiagolator/charla_elk-appdynamics/blob/main/Watchers/watcher_elk-appd-TOTAL+CITY+CAT.json)
+
+>  Aclaración: a fines de ejemplificar, utilizamos un índice que forma parte de los data samples
+> que brinda Kibana: **kibana_sample_data_ecommerce**
 
 ---
 ## Requisitos para replicar caso de uso
