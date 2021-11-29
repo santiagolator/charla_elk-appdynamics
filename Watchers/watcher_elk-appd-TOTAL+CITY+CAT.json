@@ -1,7 +1,11 @@
 {
   "trigger": {
     "schedule": {
-      "interval": "1h"
+      "hourly": {
+        "minute": [
+          0
+        ]
+      }
     }
   },
   "input": {
@@ -57,11 +61,7 @@
     }
   },
   "condition": {
-    "compare": {
-      "ctx.payload.hits.total": {
-        "gte": 0
-      }
-    }
+    "always": {}
   },
   "actions": {
     "webhook_total": {
@@ -76,7 +76,7 @@
           "Accept": "application/json",
           "Content-Type": "application/json"
         },
-        "body": """[{"metricName":"Custom Metrics|Elasticsearch|eCommerce|TOTAL_RECORDS","aggregatorType":"OBSERVATION","value":{{ctx.payload.hits.total}}}]"""
+        "body": """[{"metricName":"Custom Metrics|Elasticsearch-test-2|eCommerce|TOTAL_RECORDS","aggregatorType":"OBSERVATION","value":{{ctx.payload.hits.total}}}]"""
       }
     },
     "webhook_foreach_city": {
@@ -93,7 +93,7 @@
           "Accept": "application/json",
           "Content-Type": "application/json"
         },
-        "body": """[{{#ctx.payload}}{"metricName":"Custom Metrics|Elasticsearch|eCommerce|City|{{key}}","aggregatorType":"OBSERVATION","value":{{doc_count}}}{{/ctx.payload}}]"""
+        "body": """[{{#ctx.payload}}{"metricName":"Custom Metrics|Elasticsearch-test-2|eCommerce|City|{{key}}","aggregatorType":"OBSERVATION","value":{{doc_count}}}{{/ctx.payload}}]"""
       }
     },
     "webhook_foreach_cat": {
@@ -110,7 +110,7 @@
           "Accept": "application/json",
           "Content-Type": "application/json"
         },
-        "body": """[{{#ctx.payload}}{"metricName":"Custom Metrics|Elasticsearch|eCommerce|Category|{{key}}","aggregatorType":"OBSERVATION","value":{{doc_count}}}{{/ctx.payload}}]"""
+        "body": """[{{#ctx.payload}}{"metricName":"Custom Metrics|Elasticsearch-test-2|eCommerce|Category|{{key}}","aggregatorType":"OBSERVATION","value":{{doc_count}}}{{/ctx.payload}}]"""
       }
     }
   }

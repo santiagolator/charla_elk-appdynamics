@@ -1,71 +1,63 @@
 {
-    "trigger":{
-       "schedule":{
-          "interval":"1h"
+   "trigger": {
+     "schedule": {
+       "hourly": {
+         "minute": [
+           0
+         ]
        }
-    },
-    "input":{
-       "search":{
-          "request":{
-             "search_type":"query_then_fetch",
-             "indices":[
-                "kibana_sample_data_ecommerce*"
-             ],
-             "rest_total_hits_as_int":true,
-             "body":{
-                "size":1,
-                "query":{
-                   "bool":{
-                      "must":[
-                         
-                      ],
-                      "filter":[
-                         {
-                            "range":{
-                               "order_date":{
-                                  "format":"strict_date_optional_time",
-                                  "gte":"now-1h",
-                                  "lte":"now"
-                               }
-                            }
-                         }
-                      ],
-                      "should":[
-                         
-                      ],
-                      "must_not":[
-                         
-                      ]
+     }
+   },
+   "input": {
+     "search": {
+       "request": {
+         "search_type": "query_then_fetch",
+         "indices": [
+           "kibana_sample_data_ecommerce*"
+         ],
+         "rest_total_hits_as_int": true,
+         "body": {
+           "size": 1,
+           "query": {
+             "bool": {
+               "must": [],
+               "filter": [
+                 {
+                   "range": {
+                     "order_date": {
+                       "format": "strict_date_optional_time",
+                       "gte": "now-1h",
+                       "lte": "now"
+                     }
                    }
-                }
+                 }
+               ],
+               "should": [],
+               "must_not": []
              }
-          }
+           }
+         }
        }
-    },
-    "condition":{
-       "compare":{
-          "ctx.payload.hits.total":{
-             "gte":0
-          }
+     }
+   },
+   "condition": {
+     "always": {}
+   },
+   "actions": {
+     "webhook_total": {
+       "webhook": {
+         "scheme": "http",
+         "host": "168.197.49.81",
+         "port": 8293,
+         "method": "post",
+         "path": "/api/v1/metrics",
+         "params": {},
+         "headers": {
+           "Accept": "application/json",
+           "Content-Type": "application/json"
+         },
+         "body": """[{"metricName":"Custom Metrics|Elasticsearch-test-1|eCommerce|TOTAL_RECORDS","aggregatorType":"OBSERVATION","value":{{ctx.payload.hits.total}}}]"""
        }
-    },
-    "actions":{
-       "webhook_total":{
-          "webhook":{
-             "scheme":"http",
-             "host":"168.197.49.81",
-             "port":8293,
-             "method":"post",
-             "path":"/api/v1/metrics",
-             "params":{
-                
-             },
-             "headers":{
-                "Accept":"application/json",
-                "Content-Type":"application/json"
-             },
-             "body":"""[{"metricName":"Custom Metrics|Elasticsearch|eCommerce|TOTAL_RECORDS","aggregatorType":"OBSERVATION","value":{{ctx.payload.hits.total}}}]"""
-          }
-       }
-    }
+     }
+   }
  }
