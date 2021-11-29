@@ -9,8 +9,9 @@ Este repositorio sirve de apoyo para los asistentes a la charla **[Caso de uso] 
 
 ---
 ## Materiales
-- Slides
-- Watchers
+- [Slides](https://github.com/santiagolator/charla_elk-appdynamics/blob/main/%5BSHARE%5D%20Presentacion%20Elastic%20+%20APPD.pdf)
+- [Watchers](https://github.com/santiagolator/charla_elk-appdynamics/tree/main/Watchers)
+	- *Aclaración: utilizamos un indice que forma parte de los data samples que brinda **Kibana***
 
 ---
 ## Requisitos para replicar caso de uso
