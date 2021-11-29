@@ -38,6 +38,8 @@ Para realizar este despliegue necesitamos contar con un cluster de Kubernetes. P
 > Tener en cuenta que este despliegue es solo con fines de testing y no
 > debería ser utilizado en ambientes productivos.
 
+> Este procedimiento se realizo utilziando minikube v1.23.2 para Windows, en terminal de Powershell v7.2.0
+
 1. Antes de iniciar, es posible que necesitemos alocar ciertos recursos
 ```powershell
 minikube config set cpus 4 
