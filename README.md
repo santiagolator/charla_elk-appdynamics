@@ -27,5 +27,5 @@ Este repositorio sirve de apoyo para los asistentes a la charla **[Caso de uso] 
 - Instancia de **Appdynamics**
 	- Desde este [link](https://www.appdynamics.com/free-trial/) pueden obtener un trial por 15 dias de una instancia SaaS de AppDynamics.
 - **Machine Agent**
-	- El agente se puede descargar una vez tengan la cuenta trial de AppDynamics y puede ser instalado en una VM o de manera local (Linux o Windows). En este [link](https://docs.appdynamics.com/21.2/en/infrastructure-visibility/machine-agent/install-the-machine-agent) les dejo la documentación sobre la instalación.
+	- El agente se puede descargar una vez tengan la cuenta trial de AppDynamics desde la pestaña _Getting Started_ en la Home del Controller y puede ser instalado en una VM o de manera local (Linux o Windows). En este [link](https://docs.appdynamics.com/21.2/en/infrastructure-visibility/machine-agent/install-the-machine-agent) les dejo la documentación sobre la instalación.
 	- Además, es necesario iniciar el **listener** del MA. En [esta documentacion](https://docs.appdynamics.com/21.11/en/infrastructure-visibility/machine-agent/extensions-and-custom-metrics/machine-agent-http-listener) pueden encontrar toda la info de como hacerlo.
