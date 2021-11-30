@@ -7,6 +7,12 @@ Este repositorio sirve de apoyo para los asistentes a la charla **[Caso de uso] 
 - 📅 30/11/2021 - 19HS (GMT -3)
 - 🔗https://community.elastic.co/events/details/elastic-argentina-presents-caso-de-uso-integrando-nuestro-toolbox-elastic-y-appdynamics/
 
+### Sobre mi
+- 💬 Podes preguntarme sobre Elasticsearch, Appdynamics, Monitoring & Observability 🙂
+- 📫 Para contactarme: [santiago.lator@gmail.com](mailto://santiago.lator@gmail.com) | [slator@majorkeytech.com](mailto://slator@majorkeytech.com)
+- 👷🏼 [Mi perfil laboral](https://www.linkedin.com/in/santiago-lator/)
+- 👨‍💻 [Mi Github](https://github.com/santiagolator) 
+
 ---
 ## Materiales
 - [Slides](https://github.com/santiagolator/charla_elk-appdynamics/blob/main/%5BSHARE%5D%20Presentacion%20Elastic%20+%20APPD.pdf)
