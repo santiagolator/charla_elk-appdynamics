@@ -22,7 +22,7 @@ Este repositorio sirve de apoyo para los asistentes a la charla **[Caso de uso] 
 	- [Transacciones totales + ciudad + categoria prenda](https://github.com/santiagolator/charla_elk-appdynamics/blob/main/Watchers/watcher_elk-appd-TOTAL+CITY+CAT.json)
 
 >  Aclaración: a fines de ejemplificar, utilizamos un índice que forma parte de los data samples
-> que brinda Kibana: **kibana_sample_data_ecommerce**
+> que brinda Kibana: **kibana_sample_data_ecommerce** y una **condition** = _always_
 
 ---
 ## Requisitos para replicar caso de uso
