@@ -47,8 +47,8 @@
      "webhook_total": {
        "webhook": {
          "scheme": "http",
-         "host": "168.197.49.81",
-         "port": 8293,
+        "host": "HOSTNAME_O_IP_SERVER_MACHINE-AGENT",
+        "port": "PUERTO_LISTENER_MACHINE-AGENT",
          "method": "post",
          "path": "/api/v1/metrics",
          "params": {},
